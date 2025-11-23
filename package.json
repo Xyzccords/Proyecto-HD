@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Xyzccords/Proyecto-HD/issues"
   },
-  "homepage": "https://github.com/Xyzccords/Proyecto-HD#readme"
+  "homepage": "https://github.com/Xyzccords/Proyecto-HD#readme",
+  "devDependencies": {
+    "eslint": "^9.39.1"
+  }
 }
