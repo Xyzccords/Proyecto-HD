@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "��#\u0000 \u0000P\u0000r\u0000o\u0000y\u0000e\u0000c\u0000t\u0000o\u0000-\u0000H\u0000D\u0000\r\u0000 \u0000",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .js",
+    "prepare": "husky",
+    "lint:fix": "eslint . --ext .js --fix"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   },
   "homepage": "https://github.com/Xyzccords/Proyecto-HD#readme",
   "devDependencies": {
-    "eslint": "^9.39.1"
+    "eslint": "^9.39.1",
+    "husky": "^9.1.7"
   }
 }
