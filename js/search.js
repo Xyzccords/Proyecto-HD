@@ -1,12 +1,13 @@
-(function () {
-  function debounce(fn, wait = 200) {
-    let t;
-    return function(...args) {
-      clearTimeout(t);
-      t = setTimeout(() => fn.apply(this, args), wait);
-    };
-  }
+export function debounce(fn, wait = 200) {
+  let t;
+  return function(...args) {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
 
+// --- Código original: IIFE ---
+(function () {
   const input = document.getElementById("filtroAlumnos");
   const btnBuscar = document.getElementById("btnBuscar");
   const btnLimpiar = document.getElementById("btnLimpiar");
@@ -23,7 +24,7 @@
     }
     rows.forEach(row => {
       const cellsText = Array.from(row.querySelectorAll("td"))
-        .slice(0,4) // solo columnas visbles (nombre, dni, telefono, plan)
+        .slice(0, 4)
         .map(td => td.innerText.toLowerCase())
         .join(" ");
       row.style.display = cellsText.includes(q) ? "" : "none";
@@ -31,11 +32,10 @@
   }
 
   const filtrarDebounced = debounce(filtrar, 150);
-
-    
+  
   input.addEventListener("input", filtrarDebounced);
-  btnBuscar.addEventListener("click", filtrar);
-  btnLimpiar.addEventListener("click", () => {
+  btnBuscar?.addEventListener("click", filtrar);
+  btnLimpiar?.addEventListener("click", () => {
     input.value = "";
     filtrar();
     input.focus();
